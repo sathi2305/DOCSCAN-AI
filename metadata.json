@@ -1,0 +1,6 @@
+{
+  "name": "DOCUSCAN AI - Document Forensics & Contextual Intelligence",
+  "description": "Advanced AI-powered document forensics, visual alteration detection, OCR extraction, and cross-document contextual discrepancy analysis.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

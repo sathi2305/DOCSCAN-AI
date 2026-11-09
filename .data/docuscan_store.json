@@ -1,0 +1,646 @@
+{
+  "users": [
+    {
+      "id": "usr-analyst-01",
+      "name": "Dr. Sarah Jenkins",
+      "email": "sarah.jenkins@docuscan.ai",
+      "role": "senior_reviewer",
+      "avatarUrl": "/src/assets/images/investigator_avatar_senior_1793725545285.jpg",
+      "department": "Forensic Document Examination Unit",
+      "lastLogin": "2026-11-03T08:45:00Z"
+    },
+    {
+      "id": "usr-investigator-02",
+      "name": "Marcus Vance",
+      "email": "marcus.vance@docuscan.ai",
+      "role": "investigator",
+      "department": "Commercial Credit & Underwriting Fraud",
+      "lastLogin": "2026-11-03T07:15:00Z"
+    },
+    {
+      "id": "usr-admin-01",
+      "name": "Elena Rostova",
+      "email": "admin@docuscan.ai",
+      "role": "administrator",
+      "department": "Information Security & Compliance",
+      "lastLogin": "2026-11-02T19:30:00Z"
+    }
+  ],
+  "investigations": [
+    {
+      "id": "INV-2026-0841",
+      "title": "Commercial SME Credit Appraisal - Sharma Enterprises",
+      "description": "Comprehensive forensic inspection of loan application packet including declared salary slip, audited bank statement, and employment credentials.",
+      "category": "Loan & Mortgage Screening",
+      "priority": "High",
+      "status": "Discrepancies Flagged",
+      "createdAt": "2026-11-01T10:10:00Z",
+      "updatedAt": "2026-11-02T11:25:00Z",
+      "assignedInvestigator": "Marcus Vance",
+      "seniorReviewer": "Dr. Sarah Jenkins",
+      "documents": [
+        {
+          "id": "DOC-841-01",
+          "investigationId": "INV-2026-0841",
+          "filename": "Apex_Capital_Loan_Application_Form.pdf",
+          "originalName": "Loan_Application_Signed.pdf",
+          "fileSize": 428190,
+          "mimeType": "application/pdf",
+          "sha256Hash": "9e7b23f81e3a4798c8942b0821d3f5e3a890471b0928d3ef71893c52a08912e1",
+          "uploadedAt": "2026-11-01T10:14:00Z",
+          "uploadedBy": "Marcus Vance",
+          "classification": "Loan Application Form",
+          "pageCount": 2,
+          "processingStatus": "Completed",
+          "processingProgress": 100,
+          "fileUrl": "/api/documents/preview/DOC-841-01",
+          "metadata": {
+            "author": "Adobe Acrobat Pro 2026",
+            "creationDate": "2026-10-28T14:20:00Z",
+            "modificationDate": "2026-10-28T14:20:00Z",
+            "producerSoftware": "Apex Loan Portal PDF Gen v3.2"
+          }
+        },
+        {
+          "id": "DOC-841-02",
+          "investigationId": "INV-2026-0841",
+          "filename": "Salary_Slip_Oct2026_ApexTech.png",
+          "originalName": "Salary_Slip_Oct2026.png",
+          "fileSize": 914280,
+          "mimeType": "image/png",
+          "sha256Hash": "3a41c9b84178df9108b341f021e82713f01b98a3c48197e8201a4e98f029b471",
+          "uploadedAt": "2026-11-01T10:15:30Z",
+          "uploadedBy": "Marcus Vance",
+          "classification": "Salary Slip",
+          "pageCount": 1,
+          "processingStatus": "Completed",
+          "processingProgress": 100,
+          "fileUrl": "/api/documents/preview/DOC-841-02",
+          "metadata": {
+            "producerSoftware": "GIMP 2.10.34 (Linux)",
+            "suspiciousMetadataFlags": [
+              "Non-standard PDF producer for enterprise payroll",
+              "Photoshop/GIMP editing signature in EXIF/PNG header"
+            ]
+          }
+        },
+        {
+          "id": "DOC-841-03",
+          "investigationId": "INV-2026-0841",
+          "filename": "HDFC_Bank_Statement_Oct2026_Verified.pdf",
+          "originalName": "Bank_Statement_Oct_2026.pdf",
+          "fileSize": 681020,
+          "mimeType": "application/pdf",
+          "sha256Hash": "e5f2a1b9c8d7e6f5a4b3c2d1e0f9a8b7c6d5e4f3a2b1c0d9e8f7a6b5c4d3e2f1",
+          "uploadedAt": "2026-11-01T10:17:15Z",
+          "uploadedBy": "Marcus Vance",
+          "classification": "Bank Account Statement",
+          "pageCount": 3,
+          "processingStatus": "Completed",
+          "processingProgress": 100,
+          "fileUrl": "/api/documents/preview/DOC-841-03",
+          "metadata": {
+            "author": "HDFC Bank Core Banking E-Statement Engine",
+            "creationDate": "2026-11-01T02:00:00Z",
+            "producerSoftware": "Oracle Financial Reports Server"
+          }
+        }
+      ],
+      "findings": [
+        {
+          "id": "VIS-FIND-841-01",
+          "investigationId": "INV-2026-0841",
+          "documentId": "DOC-841-02",
+          "documentName": "Salary_Slip_Oct2026.png",
+          "page": 1,
+          "boundingBox": {
+            "x": 57.5,
+            "y": 46.2,
+            "width": 26.5,
+            "height": 6.8
+          },
+          "observation": "Digital character splice & glyph weight anomaly on leading digit \"4\" in Net Pay ₹45,000.00",
+          "detectionMethod": "Font Kerning & Weight Variance",
+          "confidenceScore": 0.94,
+          "severity": "critical",
+          "explanation": "High-resolution stroke-width analysis indicates digit \"4\" has a 2.4px stroke width compared to 1.8px on \"5,000.00\". Negative kerning spacing (-0.14em) and vertical baseline misalignment (+1.8px) demonstrate digit replacement over an original \"2\" digit.",
+          "suggestedVerification": "Audit against authentic banking payroll deposit record and request direct HR verification from Apex Technologies Pvt Ltd.",
+          "reviewStatus": "Verified Anomaly",
+          "reviewedBy": "Dr. Sarah Jenkins",
+          "reviewNotes": "Confirmed optical variance. Cross-verified with bank statement showing only ₹25,000 credit.",
+          "reviewedAt": "2026-11-02T11:20:00Z"
+        },
+        {
+          "id": "VIS-FIND-841-02",
+          "investigationId": "INV-2026-0841",
+          "documentId": "DOC-841-02",
+          "documentName": "Salary_Slip_Oct2026.png",
+          "page": 1,
+          "boundingBox": {
+            "x": 54,
+            "y": 81.5,
+            "width": 35,
+            "height": 11.5
+          },
+          "observation": "Compression artifact disparity & alpha channel halo around company rubber stamp",
+          "detectionMethod": "Error Level Analysis (ELA)",
+          "confidenceScore": 0.88,
+          "severity": "high",
+          "explanation": "ELA luminance heatmap highlights high error frequency boundaries around the circular authorization stamp. Surrounding document canvas exhibits Q92 compression, while stamp bounding box demonstrates Q78 pre-compressed bitmap paste.",
+          "suggestedVerification": "Check for duplicate digital rubber stamp assets in prior fraud submissions.",
+          "reviewStatus": "Pending Review"
+        },
+        {
+          "id": "VIS-FIND-841-03",
+          "investigationId": "INV-2026-0841",
+          "documentId": "DOC-841-01",
+          "documentName": "Loan_Application_Signed.pdf",
+          "page": 2,
+          "boundingBox": {
+            "x": 62,
+            "y": 78,
+            "width": 28,
+            "height": 7.5
+          },
+          "observation": "Pixelated raster signature superimposed on vector PDF background",
+          "detectionMethod": "Signature Cut-and-Paste Boundary",
+          "confidenceScore": 0.81,
+          "severity": "medium",
+          "explanation": "Signature stroke consists of 150 DPI raster scan inserted into a 600 DPI vector PDF document. Border exhibits faint edge gradient threshold clipping.",
+          "suggestedVerification": "Contact applicant to verify electronic consent or request in-person biometric signing.",
+          "reviewStatus": "Pending Review"
+        }
+      ],
+      "discrepancies": [
+        {
+          "id": "DISC-841-01",
+          "investigationId": "INV-2026-0841",
+          "title": "Material Net Salary Divergence (Declared ₹45,000 vs Bank Inflow ₹25,000)",
+          "severity": "critical",
+          "category": "Salary Mismatch",
+          "description": "Loan Application Form declares monthly salary of ₹45,000.00 and submitted Salary Slip states ₹45,000.00. However, the audited Bank Account Statement shows actual monthly salary credit of ₹25,000.00 from Apex Technologies Pvt Ltd on 31-Oct-2026.",
+          "involvedDocuments": [
+            {
+              "documentId": "DOC-841-01",
+              "documentName": "Loan_Application_Signed.pdf",
+              "classification": "Loan Application Form",
+              "fieldLabel": "Declared Monthly Income",
+              "extractedValue": "₹45,000.00",
+              "page": 1
+            },
+            {
+              "documentId": "DOC-841-02",
+              "documentName": "Salary_Slip_Oct2026.png",
+              "classification": "Salary Slip",
+              "fieldLabel": "Net Pay",
+              "extractedValue": "₹45,000.00",
+              "page": 1
+            },
+            {
+              "documentId": "DOC-841-03",
+              "documentName": "Bank_Statement_Oct_2026.pdf",
+              "classification": "Bank Account Statement",
+              "fieldLabel": "Salary Credit (CMS/APEX TECH)",
+              "extractedValue": "₹25,000.00",
+              "page": 1
+            }
+          ],
+          "explanation": "The ₹20,000 disparity perfectly correlates with the visual forensic finding VIS-FIND-841-01 where the digit \"4\" was identified as an overwritten glyph over an original digit \"2\". Both visual forensics and cross-document reconciliation provide corroborating evidence.",
+          "suggestedAction": "Reject commercial loan credit enhancement. Escalate to fraud investigation unit and notify underwriting committee.",
+          "status": "Open"
+        }
+      ],
+      "evidence": [
+        {
+          "id": "EVID-841-01",
+          "investigationId": "INV-2026-0841",
+          "evidenceType": "visual_splice",
+          "documentId": "DOC-841-02",
+          "documentName": "Salary_Slip_Oct2026.png",
+          "page": 1,
+          "hash": "3a41c9b84178df9108b341f021e82713f01b98a3c48197e8201a4e98f029b471",
+          "title": "Stroke Width & Kerning Splice on Net Pay Digit \"4\"",
+          "description": "Microscopic optical measurement: Stroke width 2.4px vs 1.8px standard. Baseline shift +1.8px.",
+          "capturedAt": "2026-11-01T10:20:00Z",
+          "capturedBy": "DOCUSCAN AI Vision Forensics",
+          "sourceReference": "Salary_Slip_Oct2026.png (Page 1) [Region: x=57.5%, y=46.2%]"
+        },
+        {
+          "id": "EVID-841-02",
+          "evidenceType": "contextual_conflict",
+          "investigationId": "INV-2026-0841",
+          "documentId": "DOC-841-03",
+          "documentName": "Bank_Statement_Oct_2026.pdf",
+          "page": 1,
+          "hash": "e5f2a1b9c8d7e6f5a4b3c2d1e0f9a8b7c6d5e4f3a2b1c0d9e8f7a6b5c4d3e2f1",
+          "title": "Bank Statement Remittance Inflow Record (₹25,000)",
+          "description": "Line 28: Transaction CMS9481023 CR SALARY APEX TECH PVT LTD INR 25,000.00",
+          "capturedAt": "2026-11-01T10:22:15Z",
+          "capturedBy": "DOCUSCAN AI Context Engine",
+          "sourceReference": "Bank_Statement_Oct_2026.pdf (Page 1) [Line 28]"
+        }
+      ],
+      "reviewDecision": {
+        "investigationId": "INV-2026-0841",
+        "verdict": "Escalated for Physical Inspection",
+        "summaryNotes": "Clear correlation between visual font tampering on pay slip and actual bank statement credit of ₹25,000 vs declared ₹45,000. Escalating for official verification.",
+        "riskScore": 84,
+        "decidedBy": "Dr. Sarah Jenkins",
+        "decidedByRole": "senior_reviewer",
+        "decidedAt": "2026-11-02T11:25:00Z",
+        "checklist": {
+          "visualForensicsReviewed": true,
+          "crossDocDiscrepanciesAudited": true,
+          "evidenceIntegrityChecked": true,
+          "humanVerificationComplete": true
+        }
+      }
+    },
+    {
+      "id": "INV-2026-0912",
+      "title": "Global Logistics Overseas Vendor Invoice Verification",
+      "description": "Verification of high-value freight invoice and bill of lading for customs clearance and accounts payable release.",
+      "category": "Vendor Invoice Audit",
+      "priority": "Medium",
+      "status": "Pending Review",
+      "createdAt": "2026-11-02T15:30:00Z",
+      "updatedAt": "2026-11-03T17:25:51.468Z",
+      "assignedInvestigator": "Marcus Vance",
+      "documents": [
+        {
+          "id": "DOC-912-01",
+          "investigationId": "INV-2026-0912",
+          "filename": "Freight_Forwarding_Invoice_7419.pdf",
+          "originalName": "Invoice_7419_PacificFreight.pdf",
+          "fileSize": 312040,
+          "mimeType": "application/pdf",
+          "sha256Hash": "4c81a9f0e1d2c3b4a5b6c7d8e9f0a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8",
+          "uploadedAt": "2026-11-02T15:35:00Z",
+          "uploadedBy": "Marcus Vance",
+          "classification": "Commercial Invoice",
+          "pageCount": 1,
+          "processingStatus": "Completed",
+          "processingProgress": 100,
+          "fileUrl": "/api/documents/preview/DOC-912-01"
+        }
+      ],
+      "findings": [
+        {
+          "id": "VIS-FIND-912-01",
+          "investigationId": "INV-2026-0912",
+          "documentId": "DOC-912-01",
+          "documentName": "Invoice_7419_PacificFreight.pdf",
+          "page": 1,
+          "boundingBox": {
+            "x": 62,
+            "y": 64,
+            "width": 28,
+            "height": 6
+          },
+          "observation": "Inter-line spacing anomaly and misaligned font baseline on Swift/IBAN routing field",
+          "detectionMethod": "Tabular Grid & Baseline Misalignment",
+          "confidenceScore": 0.86,
+          "severity": "high",
+          "explanation": "The beneficiary bank account routing string is shifted down by 3.2px relative to neighboring grid lines.",
+          "suggestedVerification": "Confirm wire instructions via out-of-band telephone call to verified vendor contacts.",
+          "reviewStatus": "Pending Review"
+        }
+      ],
+      "discrepancies": [],
+      "evidence": [],
+      "isArchived": false
+    },
+    {
+      "id": "INV-2026-0734",
+      "title": "Meridian Health Medicare Claims Batch Audit - Form CMS-1500",
+      "description": "Retrospective forensic review of digitized Medicare claim invoices and practitioner physician billing stamps.",
+      "category": "Healthcare & Insurance Claims",
+      "priority": "Low",
+      "status": "Approved / Cleared",
+      "createdAt": "2026-10-18T09:20:00Z",
+      "updatedAt": "2026-10-24T14:15:00Z",
+      "assignedInvestigator": "Dr. Sarah Jenkins",
+      "seniorReviewer": "Dr. Sarah Jenkins",
+      "isArchived": true,
+      "archivedAt": "2026-10-25T11:00:00Z",
+      "documents": [
+        {
+          "id": "DOC-734-01",
+          "investigationId": "INV-2026-0734",
+          "filename": "CMS1500_Claim_Batch_481.pdf",
+          "originalName": "CMS1500_Claim_Batch_481.pdf",
+          "fileSize": 512940,
+          "mimeType": "application/pdf",
+          "sha256Hash": "a1b2c3d4e5f67890123456789abcdef0123456789abcdef0123456789abcdef0",
+          "uploadedAt": "2026-10-18T09:25:00Z",
+          "uploadedBy": "Dr. Sarah Jenkins",
+          "classification": "Other Document",
+          "pageCount": 2,
+          "processingStatus": "Completed",
+          "processingProgress": 100,
+          "fileUrl": "/api/documents/preview/DOC-734-01"
+        }
+      ],
+      "findings": [],
+      "discrepancies": [],
+      "evidence": [],
+      "reviewDecision": {
+        "investigationId": "INV-2026-0734",
+        "verdict": "Approved",
+        "summaryNotes": "No signs of font alteration, raster signature pasting, or billing item inflation. Certified compliant.",
+        "riskScore": 12,
+        "decidedBy": "Dr. Sarah Jenkins",
+        "decidedByRole": "senior_reviewer",
+        "decidedAt": "2026-10-24T14:15:00Z",
+        "checklist": {
+          "visualForensicsReviewed": true,
+          "crossDocDiscrepanciesAudited": true,
+          "evidenceIntegrityChecked": true,
+          "humanVerificationComplete": true
+        }
+      }
+    }
+  ],
+  "extractedFields": {
+    "DOC-841-01": [
+      {
+        "id": "FLD-DOC-841-01-1",
+        "documentId": "DOC-841-01",
+        "fieldName": "applicant_name",
+        "label": "Applicant Full Name",
+        "extractedValue": "Rahul Sharma",
+        "fieldType": "name",
+        "confidence": 0.99,
+        "page": 1,
+        "boundingBox": {
+          "x": 25,
+          "y": 22,
+          "width": 35,
+          "height": 4
+        }
+      },
+      {
+        "id": "FLD-DOC-841-01-2",
+        "documentId": "DOC-841-01",
+        "fieldName": "declared_income",
+        "label": "Declared Monthly Income",
+        "extractedValue": "₹45,000.00",
+        "normalizedValue": 45000,
+        "fieldType": "currency",
+        "confidence": 0.98,
+        "page": 1,
+        "boundingBox": {
+          "x": 25,
+          "y": 32,
+          "width": 28,
+          "height": 4
+        }
+      },
+      {
+        "id": "FLD-DOC-841-01-3",
+        "documentId": "DOC-841-01",
+        "fieldName": "employer",
+        "label": "Current Employer",
+        "extractedValue": "Apex Technologies Pvt Ltd",
+        "fieldType": "text",
+        "confidence": 0.97,
+        "page": 1,
+        "boundingBox": {
+          "x": 25,
+          "y": 42,
+          "width": 45,
+          "height": 4
+        }
+      }
+    ],
+    "DOC-841-02": [
+      {
+        "id": "FLD-DOC-841-02-1",
+        "documentId": "DOC-841-02",
+        "fieldName": "employee_name",
+        "label": "Employee Name",
+        "extractedValue": "Rahul Sharma",
+        "fieldType": "name",
+        "confidence": 0.99,
+        "page": 1,
+        "boundingBox": {
+          "x": 26,
+          "y": 20,
+          "width": 32,
+          "height": 3.8
+        }
+      },
+      {
+        "id": "FLD-DOC-841-02-2",
+        "documentId": "DOC-841-02",
+        "fieldName": "net_salary",
+        "label": "Net Pay",
+        "extractedValue": "₹45,000.00",
+        "normalizedValue": 45000,
+        "fieldType": "currency",
+        "confidence": 0.88,
+        "page": 1,
+        "boundingBox": {
+          "x": 58,
+          "y": 46.5,
+          "width": 25,
+          "height": 5.5
+        },
+        "notes": "Visual tampering flag active on this bounding region."
+      },
+      {
+        "id": "FLD-DOC-841-02-3",
+        "documentId": "DOC-841-02",
+        "fieldName": "pay_period",
+        "label": "Pay Period",
+        "extractedValue": "October 2026",
+        "fieldType": "date",
+        "confidence": 0.98,
+        "page": 1,
+        "boundingBox": {
+          "x": 62,
+          "y": 20,
+          "width": 26,
+          "height": 3.5
+        }
+      }
+    ],
+    "DOC-841-03": [
+      {
+        "id": "FLD-DOC-841-03-1",
+        "documentId": "DOC-841-03",
+        "fieldName": "account_holder",
+        "label": "Account Holder",
+        "extractedValue": "Rahul Sharma",
+        "fieldType": "name",
+        "confidence": 0.99,
+        "page": 1,
+        "boundingBox": {
+          "x": 20,
+          "y": 16,
+          "width": 32,
+          "height": 3.5
+        }
+      },
+      {
+        "id": "FLD-DOC-841-03-2",
+        "documentId": "DOC-841-03",
+        "fieldName": "salary_credit",
+        "label": "Salary Credit (CMS/APEX TECH)",
+        "extractedValue": "₹25,000.00",
+        "normalizedValue": 25000,
+        "fieldType": "currency",
+        "confidence": 0.99,
+        "page": 1,
+        "boundingBox": {
+          "x": 60,
+          "y": 52,
+          "width": 24,
+          "height": 4
+        }
+      }
+    ]
+  },
+  "extractedTables": {
+    "DOC-841-02": [
+      {
+        "id": "TBL-841-02-1",
+        "documentId": "DOC-841-02",
+        "title": "Earnings & Deductions Schedule",
+        "page": 1,
+        "columns": [
+          "Component",
+          "Earnings (INR)",
+          "Deductions",
+          "Amount (INR)"
+        ],
+        "rows": [
+          {
+            "Component": "Basic Pay",
+            "Earnings (INR)": "₹32,000.00",
+            "Deductions": "Provident Fund",
+            "Amount (INR)": "₹1,800.00"
+          },
+          {
+            "Component": "HRA",
+            "Earnings (INR)": "₹11,000.00",
+            "Deductions": "Professional Tax",
+            "Amount (INR)": "₹200.00"
+          },
+          {
+            "Component": "Special Allowance",
+            "Earnings (INR)": "₹5,000.00",
+            "Deductions": "Tax (TDS)",
+            "Amount (INR)": "₹1,000.00"
+          }
+        ]
+      }
+    ],
+    "DOC-841-03": [
+      {
+        "id": "TBL-841-03-1",
+        "documentId": "DOC-841-03",
+        "title": "Account Ledger - October 2026",
+        "page": 1,
+        "columns": [
+          "Date",
+          "Description",
+          "Withdrawal (DR)",
+          "Deposit (CR)",
+          "Balance"
+        ],
+        "rows": [
+          {
+            "Date": "01-Oct-2026",
+            "Description": "OPENING BALANCE",
+            "Withdrawal (DR)": "-",
+            "Deposit (CR)": "-",
+            "Balance": "₹14,230.50"
+          },
+          {
+            "Date": "14-Oct-2026",
+            "Description": "POS UTILITY BILL",
+            "Withdrawal (DR)": "₹1,450.00",
+            "Deposit (CR)": "-",
+            "Balance": "₹12,780.50"
+          },
+          {
+            "Date": "31-Oct-2026",
+            "Description": "CMS SALARY APEX TECH",
+            "Withdrawal (DR)": "-",
+            "Deposit (CR)": "₹25,000.00",
+            "Balance": "₹37,780.50"
+          }
+        ]
+      }
+    ]
+  },
+  "auditLogs": [
+    {
+      "id": "AUD-001",
+      "investigationId": "INV-2026-0841",
+      "timestamp": "2026-11-01T10:10:00Z",
+      "userId": "usr-investigator-02",
+      "userName": "Marcus Vance",
+      "userRole": "investigator",
+      "action": "Case Created",
+      "category": "ANALYSIS",
+      "details": "Investigation INV-2026-0841 initiated for SME credit appraisal."
+    },
+    {
+      "id": "AUD-002",
+      "investigationId": "INV-2026-0841",
+      "timestamp": "2026-11-01T10:18:00Z",
+      "userId": "usr-investigator-02",
+      "userName": "Marcus Vance",
+      "userRole": "investigator",
+      "action": "Documents Ingested",
+      "category": "UPLOAD",
+      "details": "Uploaded 3 files: Loan Application, Pay Slip, and Bank Statement. SHA-256 hashes generated."
+    },
+    {
+      "id": "AUD-003",
+      "investigationId": "INV-2026-0841",
+      "timestamp": "2026-11-01T10:20:00Z",
+      "userId": "system",
+      "userName": "DOCUSCAN AI Vision Core",
+      "userRole": "administrator",
+      "action": "Forensic Detection",
+      "category": "ANALYSIS",
+      "details": "Visual anomaly VIS-FIND-841-01 identified: font kerning & baseline variance on Salary Slip Net Pay."
+    },
+    {
+      "id": "AUD-004",
+      "investigationId": "INV-2026-0841",
+      "timestamp": "2026-11-01T10:22:00Z",
+      "userId": "system",
+      "userName": "DOCUSCAN AI Context Engine",
+      "userRole": "administrator",
+      "action": "Context Discrepancy Flagged",
+      "category": "ANALYSIS",
+      "details": "Cross-document discrepancy DISC-841-01 flagged: Net pay ₹45,000 vs Bank credit ₹25,000."
+    },
+    {
+      "id": "AUD-005",
+      "investigationId": "INV-2026-0841",
+      "timestamp": "2026-11-02T11:20:00Z",
+      "userId": "usr-analyst-01",
+      "userName": "Dr. Sarah Jenkins",
+      "userRole": "senior_reviewer",
+      "action": "Finding Reviewed",
+      "category": "REVIEW",
+      "details": "Finding VIS-FIND-841-01 validated as Verified Anomaly. Added forensic corroboration notes."
+    },
+    {
+      "id": "AUD-006",
+      "investigationId": "INV-2026-0841",
+      "timestamp": "2026-11-02T11:25:00Z",
+      "userId": "usr-analyst-01",
+      "userName": "Dr. Sarah Jenkins",
+      "userRole": "senior_reviewer",
+      "action": "Review Decision Recorded",
+      "category": "DECISION",
+      "details": "Verdict set to \"Escalated for Physical Inspection\". Risk score calculated at 84/100."
+    }
+  ]
+}
